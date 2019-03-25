@@ -12,6 +12,7 @@ namespace EmpleadosMVC.Models
         public string nombre { get; set; }
         public int antiguedad { get; set;}
         public int edad { get; set; }
+        public string categoria { get; set; }
     }
 
     public class EmpleadoDBContext : DbContext
