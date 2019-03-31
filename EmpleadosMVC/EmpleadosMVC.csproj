@@ -145,6 +145,10 @@
     <Compile Include="Migrations\201903251640045_Categoria.Designer.cs">
       <DependentUpon>201903251640045_Categoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903311105469_Dataannotations.cs" />
+    <Compile Include="Migrations\201903311105469_Dataannotations.Designer.cs">
+      <DependentUpon>201903311105469_Dataannotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903251640045_Categoria.resx">
       <DependentUpon>201903251640045_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903311105469_Dataannotations.resx">
+      <DependentUpon>201903311105469_Dataannotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
