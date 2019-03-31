@@ -12,6 +12,8 @@
         <div class="form-inline form-group ">
             <label>Nombre:</label>
             @Html.TextBox("buscarNombre", "", htmlAttributes: new { @class = "form-control" })
+            <label>Categoria:</label>
+            @Html.DropDownList("EmpleadoCategoria", new SelectList(ViewBag.EmpleadoCategoria), "Todas",htmlAttributes: new { @class = "form-control" })
             <input type="submit" value="Buscar" class="btn btn-default" />
         </div>
         

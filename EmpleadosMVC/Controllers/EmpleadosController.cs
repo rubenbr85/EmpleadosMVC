@@ -15,17 +15,34 @@ namespace EmpleadosMVC.Controllers
         private EmpleadoDBContext db = new EmpleadoDBContext();
 
         // GET: Empleados
-        public ActionResult Index(string buscarNombre)
+        public ActionResult Index(string empleadoCategoria, string buscarNombre)
         {
-            var Empleados = from cr in db.Empleados select cr;
+            ViewBag.EmpleadoCategoria = getListaDistintasCategorias();
+
+           var Empleados = from cr in db.Empleados select cr;
 
             if (!String.IsNullOrEmpty(buscarNombre))
             {
                 Empleados = Empleados.Where(c => c.nombre.Contains(buscarNombre));
             }
 
+            if (!string.IsNullOrEmpty(empleadoCategoria))
+            {
+                Empleados = Empleados.Where(g => g.categoria == empleadoCategoria);
+            }
+
             return View(Empleados);
         }
+
+        private List<string> getListaDistintasCategorias()
+        {
+            var listaCategorias = new List<string>();
+            var ConsultaCategoria = from gq in db.Empleados orderby gq.categoria select gq.categoria;
+
+            listaCategorias.AddRange(ConsultaCategoria.Distinct());
+
+            return listaCategorias;
+    }
 
         // GET: Empleados/Details/5
         public ActionResult Details(int? id)
